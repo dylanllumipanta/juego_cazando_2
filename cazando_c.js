@@ -44,23 +44,27 @@ function limpiarCanva(){
 }
 
 function detectarColision(){
+
     if(gatoX + ANCHO_GATO > comidaX &&
-        gatoX < comidaX + ANCHO_COMIDA &&
-        gatoY + ALTO_GATO > comidaY &&
-        gatoY < comidaY + ALTO_COMIDA
-    ){  puntaje = puntaje + 1;
+       gatoX < comidaX + ANCHO_COMIDA &&
+       gatoY + ALTO_GATO > comidaY &&
+       gatoY < comidaY + ALTO_COMIDA){
+        puntaje = puntaje + 1;
         mostrarEnSpan("puntos", puntaje);
         aparecerComida();
-        mostrarEnSpan("tiempo", tiempo);
-        intervaloTiempo = setInterval(restarTiempo,3000);
+        if(puntaje == 6){
+            clearInterval(intervaloTiempo);
+            alert("¡GANASTE!");
+        }
     }
 }
 
 function restarTiempo(){
     tiempo = tiempo - 1;
     mostrarEnSpan("tiempo", tiempo);
-    if(tiempo == 0){clearInterval(intervaloTiempo);
-        alert("TIEMPO TERMINADO");
+    if(tiempo == 0){
+        clearInterval(intervaloTiempo);
+        alert("GAME OVER");
     }
 }
 
@@ -115,6 +119,10 @@ function iniciarJuego(){
     graficarGato();
     graficarComida();
     aparecerComida()
+
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+    intervaloTiempo = setInterval(restarTiempo,4000);
 }
 
 function graficarRectangulo(
