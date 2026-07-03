@@ -125,6 +125,19 @@ function iniciarJuego(){
     intervaloTiempo = setInterval(restarTiempo,4000);
 }
 
+function reiniciar(){
+
+    clearInterval(intervaloTiempo);
+
+    puntaje = 0;
+    tiempo = 10;
+
+    mostrarEnSpan("puntos", puntaje);
+    mostrarEnSpan("tiempo", tiempo);
+
+    iniciarJuego();
+}
+
 function graficarRectangulo(
     x,
     y,
