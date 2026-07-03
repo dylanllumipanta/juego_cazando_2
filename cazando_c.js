@@ -1,7 +1,9 @@
 let canvas = document.getElementById("areajuego");
 let ctx = canvas.getContext("2d");
 
-let puntaje = 0;
+let puntaje=0;
+let tiempo=10;
+let intervaloTiempo;
 
 let gatoX=0;
 let gatoY=0;
@@ -49,6 +51,16 @@ function detectarColision(){
     ){  puntaje = puntaje + 1;
         mostrarEnSpan("puntos", puntaje);
         aparecerComida();
+        mostrarEnSpan("tiempo", tiempo);
+        intervaloTiempo = setInterval(restarTiempo,3000);
+    }
+}
+
+function restarTiempo(){
+    tiempo = tiempo - 1;
+    mostrarEnSpan("tiempo", tiempo);
+    if(tiempo == 0){clearInterval(intervaloTiempo);
+        alert("TIEMPO TERMINADO");
     }
 }
 
