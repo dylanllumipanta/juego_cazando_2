@@ -1,0 +1,7 @@
+actua como diseñador grafico y mejora el apartado grafico de este juego, asegurate de mantener los dos archivos
+separados, agrega:
+1.un diseño mas moderno y minimalista.
+2.efectos visuales para diferentes acciones como:
+pasar el cursor por los botones.
+hacer click en los botones.
+u otras que consideres necesario.

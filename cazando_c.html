@@ -1,35 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Juego Cazando</title>
-  <link rel="stylesheet" href="cazando_c.css"/>
-  <script src="utilitarios.js"></script>
+    <meta charset="UTF-8">
+    <title>Juego Cazando</title>
 
+    <link rel="stylesheet" href="cazando_c.css">
+    <script src="utilitarios.js"></script>
 </head>
+
 <body onload="iniciarJuego();">
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Dylan Llumipanta</p>
- <canvas id="areajuego" width="500" height="500"></canvas>
+<div class="contenedor">
 
+    <header>
+        <h1>🎯 Juego Cazando</h1>
+        <p class="autor">Desarrollado por <strong>Dylan Llumipanta</strong></p>
+    </header>
 
-  <div class="controles">
-    <button onclick="moverArriba();">⬆</button>
-    <br>
-    <button onclick="moverIzquierda();">⬅</button>
-    <button onclick="moverAbajo();">⬇</button>
-    <button onclick="moverDerecha();">➡</button>
-  </div>
-    <button onclick="reiniciar();">REINICIAR</button>
+    <canvas id="areajuego" width="500" height="500"></canvas>
 
+    <div class="controles">
 
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
+        <button onclick="moverArriba()">⬆</button>
 
-  <p id="mensaje"></p>
+        <div class="fila">
+            <button onclick="moverIzquierda()">⬅</button>
+            <button onclick="moverAbajo()">⬇</button>
+            <button onclick="moverDerecha()">➡</button>
+        </div>
+
+    </div>
+
+    <button class="reiniciar" onclick="reiniciar()">
+        🔄 Reiniciar
+    </button>
+
+    <div class="panel">
+
+        <div class="tarjeta">
+            <h3>PUNTOS</h3>
+            <span id="puntos">0</span>
+        </div>
+
+        <div class="tarjeta">
+            <h3>TIEMPO</h3>
+            <span id="tiempo">10</span>
+        </div>
+
+    </div>
+
+    <p id="mensaje"></p>
+
+</div>
 
 <script src="cazando_c.js"></script>
+
 </body>
 </html>
