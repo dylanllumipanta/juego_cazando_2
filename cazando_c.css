@@ -299,3 +299,13 @@ html{
     scroll-behavior:smooth;
 
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("istockphoto-1732963074-612x612.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
