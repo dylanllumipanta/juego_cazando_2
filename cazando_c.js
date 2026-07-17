@@ -11,8 +11,8 @@ let gatoY=0;
 let comidaX=0;
 let comidaY=0;
 
-const ALTO_GATO=60;
-const ANCHO_GATO=60;
+const ALTO_GATO=20;
+const ANCHO_GATO=20;
 
 const ALTO_COMIDA=25;
 const ANCHO_COMIDA=25;
@@ -24,7 +24,7 @@ function graficarGato(){
         gatoY,
         ANCHO_GATO,
         ALTO_GATO,
-        "gray"
+        "red"
     );
 }
 
@@ -64,7 +64,7 @@ function restarTiempo(){
     mostrarEnSpan("tiempo", tiempo);
     if(tiempo == 0){
         clearInterval(intervaloTiempo);
-        alert("GAME OVER");
+        alert("JUEGO TERMINADO");
     }
 }
 
@@ -154,4 +154,8 @@ function graficarRectangulo(
         ancho,
         alto
     );
+}
+
+function desaparecerPersonaje(){
+    ctx.clearRect(gatoX,gatoY,ANCHO_GATO,ALTO_GATO);
 }
